@@ -1,0 +1,18 @@
+{
+  "title": "GamingWorth",
+  "description": "ゲーム(esports)のことを中心に好きなことを話すPodcastです。",
+  "author": {
+    "name": "putcut",
+    "email": "putcutpoint@gmail.com",
+    "url": "https://twitter.com/putcutt"
+  },
+  "language": "ja",
+  "siteUrl": "https://gamingworth.net",
+  "appleUrl": "https://itunes.apple.com/jp/podcast/gamingworth/id1336050155?mt=2",
+  "googleUrl": "https://podcasts.google.com/feed/aHR0cHM6Ly9nYW1pbmd3b3J0aC5uZXQvZmVlZC54bWw?hl=ja",
+  "spotifyUrl": "https://open.spotify.com/show/2IIEZFfkXSvRPOlN3dgvgg",
+  "itunes": {
+    "keywords": "putcut,game,videogame,esports,anime,manga,otaku",
+    "subtitle": "A Podcast from Japan. Talking about VideoGame, Esports, Anime, Manga."
+  }
+}

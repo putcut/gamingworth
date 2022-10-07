@@ -1,0 +1,3 @@
+.post ul {
+  @apply list-disc list-inside
+}
