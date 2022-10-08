@@ -41,20 +41,20 @@ export const getAllFilesFrontMatter = async () => {
     const { data, content } = matter(source)
 
     // feed item description 用のオブジェクトを作る
-    const descriptions: LinkInterface[] = []
+    const feedDescriptions: LinkInterface[] = []
     const lines = content.replace(/<MP3.*\/>/, '').replace(/\n/g, '').split('- ')
     lines.forEach((line) => {
       if (line === '') return
       const splitedForLink = line.replace(/^\[/, '').replace(/\)$/, '').split('\]\(')
       if (splitedForLink.length === 1) {
-        descriptions.push({ text: splitedForLink[0]})
+        feedDescriptions.push({ text: splitedForLink[0]})
       }
       if (splitedForLink.length === 2) {
-        descriptions.push({ text: splitedForLink[0], url: splitedForLink[1] })
+        feedDescriptions.push({ text: splitedForLink[0], url: splitedForLink[1] })
       }
     })
 
-    frontMatters.push({ ...data as FrontMatterInterface, slug: formatSlug(file), descriptions: descriptions })
+    frontMatters.push({ ...data as FrontMatterInterface, slug: formatSlug(file), feedDescriptions: feedDescriptions })
   })
 
   return frontMatters.sort((a, b) => (a.date > b.date ? -1 : 1))

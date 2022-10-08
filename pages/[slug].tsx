@@ -4,10 +4,11 @@ import ErrorPage from 'next/error'
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
+import Layout from '../components/layout'
+import Seo from '../components/seo'
+import MDXComponents from '../components/mdxComponents'
 import { PostInterface } from '../libs/PostInterface'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '../libs/mdx'
-import Layout from '../components/layout'
-import MDXComponents from '../components/mdxComponents'
 import style from '../styles/Post.module.css'
 
 interface Props {
@@ -50,6 +51,7 @@ const Post: NextPage<Props> = ({ post, prev, next }) => {
   }
   return (
     <>
+      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description={frontMatter.description} />
       <Layout>
         <article className={`${style.post} space-y-8`}>
           <h1 className='text-3xl'>{frontMatter.slug}. {frontMatter.title}</h1>

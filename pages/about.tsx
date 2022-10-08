@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const About: NextPage = () => {
   return (
     <>
+      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description='GamingWorthは、ゲーム(esports)のことを中心に好きなことを話すPodcastです。' />
       <Layout>
         <article className='space-y-4'>
           <h1 className='text-3xl'>About</h1>

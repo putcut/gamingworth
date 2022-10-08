@@ -2,7 +2,7 @@ import { FrontMatterInterface } from "./FrontMatterInterface";
 
 export interface PostInterface extends FrontMatterInterface {
   slug: string
-  descriptions: LinkInterface[]
+  feedDescriptions: LinkInterface[]
 }
 
 export interface LinkInterface {

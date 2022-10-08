@@ -8,6 +8,7 @@ import Link from 'next/link'
 import RSS from 'rss'
 
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import { PostInterface } from '../libs/PostInterface'
 import { getAllFilesFrontMatter } from '../libs/mdx';
 
@@ -92,12 +93,12 @@ const createFeedItemDescription = (post: PostInterface) => {
     <>
       <p>{post.description}</p>
       <ul>
-        {post.descriptions.map((description, index) => (
+        {post.feedDescriptions.map((feedDescription, index) => (
           <li key={index}>
-            {description.url === undefined ?
-              <>{description.text}</>
+            {feedDescription.url === undefined ?
+              <>{feedDescription.text}</>
               :
-              <a href={description.url}>{description.text}</a>
+              <a href={feedDescription.url}>{feedDescription.text}</a>
             }
           </li>
         ))}
@@ -109,6 +110,7 @@ const createFeedItemDescription = (post: PostInterface) => {
 const Home: NextPage<Props> = ({ posts }: Props) => {
   return (
     <>
+      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description='GamingWorthは、ゲーム(esports)のことを中心に好きなことを話すPodcastです。' />
       <Layout>
         <div className='pt-8 space-y-8'>
           {posts.map((post, index) => (
