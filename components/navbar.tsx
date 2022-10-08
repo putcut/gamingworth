@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className='w-1/2 mx-auto py-4 flex flex-col'>
       <Link href='/'>
-        <h1 className='text-4xl font-bold'><a className='text-inherit hover:text-inherit'>GamingWorth</a></h1>
+        <h1 className='text-4xl font-bold'><a className='text-inherit hover:text-inherit'>{process.env.NEXT_PUBLIC_SITE_NAME}</a></h1>
       </Link>
       <div className='pt-4 flex justify-between'>
         <div className='flex flex-col space-y-2'>

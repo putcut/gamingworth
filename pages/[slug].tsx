@@ -7,6 +7,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import MDXComponents from '../components/mdxComponents'
+import TweetButton from '../components/tweetButton'
 import { PostInterface } from '../libs/PostInterface'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '../libs/mdx'
 import style from '../styles/Post.module.css'
@@ -54,6 +55,10 @@ const Post: NextPage<Props> = ({ post, prev, next }) => {
       <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description={frontMatter.description} />
       <Layout>
         <article className={`${style.post} space-y-8`}>
+          <div className='flex space-x-2 items-center'>
+            <p className='text-sm'>{frontMatter.date}</p>
+            <TweetButton text={frontMatter.title} url={`${process.env.NEXT_PUBLIC_SITE_URL}/${frontMatter.slug}`} />
+          </div>
           <h1 className='text-3xl'>{frontMatter.slug}. {frontMatter.title}</h1>
           <MDXRemote {...mdxSource} components={MDXComponents} />
         </article>

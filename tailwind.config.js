@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        twitter: '#1da1f2',
+        twitterHover: '#0c87cf'
+      }
+    },
   },
   plugins: [],
 }
