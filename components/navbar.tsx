@@ -4,11 +4,13 @@ const Navbar = () => {
   return (
     <nav className='w-1/2 mx-auto py-4 flex flex-col'>
       <Link href='/'>
-        <h1 className='text-4xl font-bold'><a className='text-inherit hover:text-inherit'>{process.env.NEXT_PUBLIC_SITE_NAME}</a></h1>
+        <h1 className='text-4xl font-bold dark:text-slate-50'>
+          <a className='text-inherit hover:text-inherit'>{process.env.NEXT_PUBLIC_SITE_NAME}</a>
+        </h1>
       </Link>
       <div className='pt-4 flex justify-between'>
         <div className='flex flex-col space-y-2'>
-          <p>GamingWorthは、ゲーム(esports)のことを中心に好きなことを話すPodcastです。</p>
+          <p>{process.env.NEXT_PUBLIC_SITE_DESCRIPTION!}</p>
           <Link href='/about'><a>About</a></Link>
         </div>
         <div>

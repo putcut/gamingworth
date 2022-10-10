@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}"
   ],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {

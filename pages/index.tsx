@@ -1,9 +1,9 @@
 import path from 'path'
 import fsPromise from 'fs/promises'
 
-import ReactDOMServer from 'react-dom/server'
 import type { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
+import ReactDOMServer from 'react-dom/server'
 
 import RSS from 'rss'
 
@@ -110,7 +110,7 @@ const createFeedItemDescription = (post: PostInterface) => {
 const Home: NextPage<Props> = ({ posts }: Props) => {
   return (
     <>
-      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description='GamingWorthは、ゲーム(esports)のことを中心に好きなことを話すPodcastです。' />
+      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description={process.env.NEXT_PUBLIC_SITE_DESCRIPTION!} />
       <Layout>
         <div className='pt-8 space-y-8'>
           {posts.map((post, index) => (

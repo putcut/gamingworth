@@ -16,7 +16,7 @@ const TweetButton = (props: Props) => {
       href={_url.toString()}
     >
       <VscTwitter className='inline' />
-      <span className='pl-1'>Tweet</span>
+      <span className='pl-1 align-middle'>Tweet</span>
     </a>
   )
 }

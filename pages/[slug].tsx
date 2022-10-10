@@ -59,7 +59,7 @@ const Post: NextPage<Props> = ({ post, prev, next }) => {
             <p className='text-sm'>{frontMatter.date}</p>
             <TweetButton text={frontMatter.title} url={`${process.env.NEXT_PUBLIC_SITE_URL}/${frontMatter.slug}`} />
           </div>
-          <h1 className='text-3xl'>{frontMatter.slug}. {frontMatter.title}</h1>
+          <h1 className='text-3xl dark:text-slate-50'>{frontMatter.slug}. {frontMatter.title}</h1>
           <MDXRemote {...mdxSource} components={MDXComponents} />
         </article>
       </Layout>

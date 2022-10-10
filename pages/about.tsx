@@ -6,10 +6,10 @@ import Seo from '../components/seo'
 const About: NextPage = () => {
   return (
     <>
-      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description='GamingWorthは、ゲーム(esports)のことを中心に好きなことを話すPodcastです。' />
+      <Seo title={process.env.NEXT_PUBLIC_SITE_NAME!} description={process.env.NEXT_PUBLIC_SITE_DESCRIPTION!} />
       <Layout>
         <article className='space-y-4'>
-          <h1 className='text-3xl'>About</h1>
+          <h1 className='text-3xl dark:text-slate-50'>About</h1>
           <p>GamingWorthは、ゲーム(esports)のことを中心に好きなことを話すPodcastです。ゲームの他に、アニメやマンガなど、オタクが日々を過ごす中で気になった話題などを取り上げて話しています。</p>
           <div className='space-y-4'>
             <h2 className='text-2xl'>話し手</h2>
