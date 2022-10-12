@@ -7,10 +7,10 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { PostInterface, LinkInterface } from './PostInterface'
 import { FrontMatterInterface } from './FrontMatterInterface'
 
-const postsDirectory = path.join(process.cwd(), "posts")
+const postsDirectory = path.join(process.cwd(), 'posts')
 
 export const formatSlug = (fileName: string) => {
-  return fileName.replace(/\.(mdx|md)/, "")
+  return fileName.replace(/\.(mdx|md)/, '')
 }
 
 export const getFiles = async () => {
@@ -19,7 +19,7 @@ export const getFiles = async () => {
 
 export const getFileBySlug = async (slug: string) => {
   const mdxPath = path.join(postsDirectory, `${slug}.mdx`)
-  const source = fs.readFileSync(mdxPath, "utf8")
+  const source = fs.readFileSync(mdxPath, 'utf8')
   const { data, content } = matter(source)
   const mdxSource = await serialize(content)
   return {
@@ -37,7 +37,7 @@ export const getAllFilesFrontMatter = async () => {
   const frontMatters: PostInterface[] = []
 
   files.forEach(file => {
-    const source = fs.readFileSync(path.join(postsDirectory, file), "utf8")
+    const source = fs.readFileSync(path.join(postsDirectory, file), 'utf8')
     const { data, content } = matter(source)
 
     // feed item description 用のオブジェクトを作る
