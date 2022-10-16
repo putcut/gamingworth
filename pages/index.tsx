@@ -26,7 +26,7 @@ const getStaticProps: GetStaticProps<Props> = async () => {
   const feed = new RSS({
     title: feedConfigJson.title,
     description: feedConfigJson.description,
-    feed_url: feedConfigJson.siteUrl + '/feed.xml',
+    feed_url: feedConfigJson.feedUrl,
     site_url: feedConfigJson.siteUrl,
     managingEditor: feedConfigJson.author.name,
     webMaster: feedConfigJson.author.name,

@@ -15,10 +15,10 @@ const Navbar = () => {
       <div>
         <h2 className='font-bold'>Subscribe</h2>
         <ul className='text-sm'>
-          <li><a>RSS</a></li>
-          <li><a>Apple Podcast</a></li>
-          <li><a>Google Podcasts</a></li>
-          <li><a>Spotify</a></li>
+          <li><a href='https://gamingworth.net/feed.xml'>RSS</a></li>
+          <li><a href='https://itunes.apple.com/jp/podcast/gamingworth/id1336050155?mt=2'>Apple Podcast</a></li>
+          <li><a href='https://podcasts.google.com/feed/aHR0cHM6Ly9nYW1pbmd3b3J0aC5uZXQvZmVlZC54bWw?hl=ja'>Google Podcasts</a></li>
+          <li><a href='https://open.spotify.com/show/2IIEZFfkXSvRPOlN3dgvgg'>Spotify</a></li>
         </ul>
       </div>
     </nav>
