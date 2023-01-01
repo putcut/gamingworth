@@ -10,7 +10,10 @@ const Navbar = () => {
           </h1>
         </Link>
         <p>{process.env.NEXT_PUBLIC_SITE_DESCRIPTION!}</p>
-        <Link href='/about'><a>About</a></Link>
+        <div className='flex space-x-4'>
+          <Link href='/about'><a>About</a></Link>
+          <a href='https://suzuri.jp/putcut'>Goods</a>
+        </div>
       </div>
       <div>
         <h2 className='font-bold'>Subscribe</h2>
