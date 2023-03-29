@@ -41,7 +41,7 @@ const getStaticProps: GetStaticProps<Props> = async () => {
       {'itunes:explicit': 'False'},
       {'itunes:image': {
         _attr: {
-          href: feedConfigJson.siteUrl + '/artwork.png'
+          href: feedConfigJson.siteUrl + '/artwork.jpg'
         }
       }},
       {'itunes:keywords': feedConfigJson.itunes.keywords},
