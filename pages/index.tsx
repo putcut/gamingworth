@@ -74,7 +74,7 @@ const getStaticProps: GetStaticProps<Props> = async () => {
       title: post.slug + '. ' + post.title,
       description: ReactDOMServer.renderToString(description),
       date: post.date,
-      url: feedConfigJson.siteUrl + '/posts/' + post.slug,
+      url: feedConfigJson.siteUrl + '/' + post.slug,
       enclosure: {
         url: feedConfigJson.siteUrl + post.src,
         size: post.size,
