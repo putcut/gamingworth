@@ -1,18 +1,21 @@
 {
-    "name": "tinygis-node",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
-    "settings": {
-        "terminal.integrated.profiles.linux": {
-            "bash": {
-                "path": "/bin/bash",
-                "icon": "terminal-bash"
-            }
+    "name": "astro with node",
+    "image": "ubuntu:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "false",
+            "username": "vscode",
+            "uid": "1000",
+            "gid": "1000"
         },
-        "terminal.integrated.defaultProfile.linux": "bash"
+        "ghcr.io/devcontainers/features/node:1": {}
     },
-    "forwardPorts": [3000],
-    "remoteUser": "node"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "astro-build.astro-vscode"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
 }
