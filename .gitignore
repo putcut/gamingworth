@@ -2,15 +2,9 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
-
-# next.js
-/.next/
-/out/
 
 # production
 /build
@@ -35,5 +29,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated
-/public/feed.xml
+# astro
+.astro
+/dist

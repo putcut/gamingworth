@@ -1,0 +1,36 @@
+---
+import { SITE_TITLE } from '../consts';
+
+const today = new Date();
+---
+
+<body>
+    <div class="min-h-screen flex flex-col">
+        <header class="border-b">
+            <nav class="flex justify-around p-4">
+                <div class="flex flex-col">
+                    <h1 class="text-4xl"><a href="/">{SITE_TITLE}</a></h1>
+                    <div class="flex space-x-2 mt-2">
+                        <a href="/about" class="link">About</a>
+                        <a href="https://suzuri.jp/putcut" class="link">Goods</a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-lg font-bold">Subscribe</p>
+                    <ul>
+                        <li><a href="https://gamingworth.net/feed.xml" class="link">RSS</a></li>
+                        <li><a href="https://podcasts.apple.com/us/podcast/gamingworth/id1680396598" class="link">Apple</a></li>
+                        <li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly9nYW1pbmd3b3J0aC5uZXQvZmVlZC54bWw?hl=ja" class="link">Google</a></li>
+                        <li><a href="https://open.spotify.com/show/2IIEZFfkXSvRPOlN3dgvgg" class="link">Spotify</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="md:w-1/2 mx-auto p-8 grow">
+            <slot />
+        </main>
+        <footer class="text-center p-2">
+            &copy; 2018 - {today.getFullYear()} GamingWorth
+        </footer>
+    </div>
+</body>
