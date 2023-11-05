@@ -22,12 +22,11 @@ export async function GET(context) {
 				title: `${post.slug}. ${post.data.title}`,
 				link: post.slug,
 				pubDate: post.data.pubDate,
-				description: post.data.description,
 				customData:
 					`
-						<content:encoded>
+						<description>
 						${content}
-						</content:encoded>
+						</description>
 					`,
 				enclosure: {
 					url: context.site + post.data.audioSource.substring(1),
