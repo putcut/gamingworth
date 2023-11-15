@@ -25,6 +25,7 @@ export async function GET(context) {
 				customData:
 					`
 						<description>
+						<p>${post.data.description}</p>
 						${content}
 						</description>
 					`,
