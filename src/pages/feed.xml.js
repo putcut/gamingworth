@@ -64,7 +64,8 @@ export async function GET(context) {
 			`,
 	// <content:encoded>タグを無理やり外す
 	}).then(res => {
-		const xml = res.text();
+		return res.text();
+	}).then(xml => {
 		const formattedXml = xml.replace(/<\/?content:encoded>/gi, "");
 		const newResponse = new Response(formattedXml, {
 			headers: {
