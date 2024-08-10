@@ -22,11 +22,13 @@ export async function GET(context) {
 				title: `${post.slug}. ${post.data.title}`,
 				link: post.slug,
 				pubDate: post.data.pubDate,
-				customData:
+				content:
 					`
 						<description>
+						<![CDATA[
 						<p>${post.data.description}</p>
 						${content}
+						]]>
 						</description>
 					`,
 				enclosure: {
@@ -60,5 +62,17 @@ export async function GET(context) {
 					<itunes:email>putcutpoint@gmail.com</itunes:email>
 				</itunes:owner>
 			`,
+	// <content:encoded>タグを無理やり外す
+	}).then(res => {
+		const xml = res.text();
+		const formattedXml = xml.replace(/<\/?content:encoded>/gi, "");
+		const newResponse = new Response(formattedXml, {
+			headers: {
+				'Content-Type': 'application/xml',
+			},
+			status: 200,
+			statusText: 'OK',
+		});
+		return Promise.resolve(newResponse);
 	});
 }
