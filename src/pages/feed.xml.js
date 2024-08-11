@@ -24,12 +24,10 @@ export async function GET(context) {
 				pubDate: post.data.pubDate,
 				content:
 					`
-						<description>
-						<![CDATA[
+						<description><![CDATA[
 						<p>${post.data.description}</p>
 						${content}
-						]]>
-						</description>
+						]]></description>
 					`,
 				enclosure: {
 					url: context.site + post.data.audioSource.substring(1),
