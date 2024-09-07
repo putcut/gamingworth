@@ -22,12 +22,21 @@ export async function GET(context) {
 				title: `${post.slug}. ${post.data.title}`,
 				link: post.slug,
 				pubDate: post.data.pubDate,
+				description: post.data.description,
+				/*
 				content:
 					`
 						<description><![CDATA[
 						<p>${post.data.description}</p>
 						${content}
 						]]></description>
+					`,
+				*/
+				content:
+					`
+						<![CDATA[
+						${content}
+						]]>
 					`,
 				enclosure: {
 					url: context.site + post.data.audioSource.substring(1),
@@ -61,6 +70,8 @@ export async function GET(context) {
 				</itunes:owner>
 			`,
 	// <content:encoded>タグを無理やり外す
+	// いったん止める
+	/*
 	}).then(res => {
 		return res.text();
 	}).then(xml => {
@@ -73,5 +84,6 @@ export async function GET(context) {
 			statusText: 'OK',
 		});
 		return Promise.resolve(newResponse);
+	*/
 	});
 }
