@@ -32,12 +32,15 @@ export async function GET(context) {
 						]]></description>
 					`,
 				*/
+				/*
 				content:
 					`
 						<![CDATA[
 						${content}
 						]]>
 					`,
+				*/
+				content: content,
 				enclosure: {
 					url: context.site + post.data.audioSource.substring(1),
 					length: post.data.audioSize,
