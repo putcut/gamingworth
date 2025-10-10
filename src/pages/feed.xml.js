@@ -42,7 +42,7 @@ export async function GET(context) {
 				*/
 				content: content,
 				enclosure: {
-					url: context.site + post.data.audioSource.substring(1),
+					url: post.data.audioSource,
 					length: post.data.audioSize,
 					type: 'audio/mpeg',
 				}
