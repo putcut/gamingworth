@@ -1,0 +1,22 @@
+{
+    "name": "astro with node",
+    "image": "ubuntu:22.04",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "false",
+            "username": "vscode",
+            "uid": "1000",
+            "gid": "1000"
+        },
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "astro-build.astro-vscode",
+                "redhat.vscode-xml"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
+}
