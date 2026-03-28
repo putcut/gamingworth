@@ -2,6 +2,6 @@
 https://gamingworth.net/
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
