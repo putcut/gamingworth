@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import FormattedDate from '../components/FormattedDate.astro';
@@ -7,13 +7,13 @@ import FormattedDate from '../components/FormattedDate.astro';
 export async function getStaticPaths() {
 	const posts = await getCollection('post');
 	return posts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: post,
 	}));
 }
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <!doctype html>
@@ -26,7 +26,7 @@ const { Content } = await post.render();
 			<p class="text-small">
 				<FormattedDate date={post.data.pubDate} />
 			</p>
-			<h2 class="text-4xl my-2">{post.slug}. {post.data.title}</h2>
+			<h2 class="text-4xl my-2">{post.id}. {post.data.title}</h2>
 			<audio class="my-4" src={post.data.audioSource} preload="auto" controls />
 			<Content />
 		</section>

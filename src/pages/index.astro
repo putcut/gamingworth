@@ -24,8 +24,8 @@ const posts = (await getCollection('post')).sort(
 							<p class="text-sm">
 								<FormattedDate date={post.data.pubDate} />
 							</p>
-							<a href={`/${post.slug}/`} class="link">
-								<p class="text-2xl underline">{`${post.slug}. ${post.data.title}`}</p>
+							<a href={`/${post.id}/`} class="link">
+								<p class="text-2xl underline">{`${post.id}. ${post.data.title}`}</p>
 							</a>
 							<p class="mt-2">{post.data.description}</p>
 						</li>

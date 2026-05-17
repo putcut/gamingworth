@@ -19,8 +19,8 @@ export async function GET(context) {
 		items: posts.map((post) => {
 			const content = marked(post.body);
 			return ({
-				title: `${post.slug}. ${post.data.title}`,
-				link: post.slug,
+				title: `${post.id}. ${post.data.title}`,
+				link: post.id,
 				pubDate: post.data.pubDate,
 				description: post.data.description,
 				/*
