@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "sync": "astro sync",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node -v && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
